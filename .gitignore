@@ -1,0 +1,12 @@
+ml_login_data.mat
+octave-core
+
+*.swp
+*~
+\#*\#
+*DS_Store
+
+*.class
+*.pyc
+*.out
+*.aux
