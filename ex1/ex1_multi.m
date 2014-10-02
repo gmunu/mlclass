@@ -90,10 +90,10 @@ theta = zeros(3, 1);
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
-figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
-xlabel('Number of iterations');
-ylabel('Cost J');
+%figure;
+%plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+%xlabel('Number of iterations');
+%ylabel('Cost J');
 
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');
@@ -105,6 +105,8 @@ fprintf('\n');
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
 price = 0; % You should change this
+x_normalized = bsxfun(@rdivide, bsxfun(@minus, [1650 3], mu), sigma);
+price = [1 x_normalized] * theta;
 
 
 % ============================================================
@@ -150,7 +152,7 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
-
+price = [1 1650 3] * theta;
 
 % ============================================================
 
