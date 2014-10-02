@@ -27,18 +27,18 @@ clear ; close all; clc
 data = load('ex2data2.txt');
 X = data(:, [1, 2]); y = data(:, 3);
 
-plotData(X, y);
+%O plotData(X, y);
 
 % Put some labels 
-hold on;
+%O hold on;
 
 % Labels and Legend
-xlabel('Microchip Test 1')
-ylabel('Microchip Test 2')
+%O xlabel('Microchip Test 1')
+%O ylabel('Microchip Test 2')
 
 % Specified in plot order
-legend('y = 1', 'y = 0')
-hold off;
+%O legend('y = 1', 'y = 0')
+%O hold off;
 
 
 %% =========== Part 1: Regularized Logistic Regression ============
@@ -97,16 +97,16 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
-plotDecisionBoundary(theta, X, y);
-hold on;
-title(sprintf('lambda = %g', lambda))
+%O plotDecisionBoundary(theta, X, y);
+%O hold on;
+%O title(sprintf('lambda = %g', lambda))
 
 % Labels and Legend
-xlabel('Microchip Test 1')
-ylabel('Microchip Test 2')
+%O xlabel('Microchip Test 1')
+%O ylabel('Microchip Test 2')
 
-legend('y = 1', 'y = 0', 'Decision boundary')
-hold off;
+%O legend('y = 1', 'y = 0', 'Decision boundary')
+%O hold off;
 
 % Compute accuracy on our training set
 p = predict(theta, X);

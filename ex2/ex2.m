@@ -30,24 +30,23 @@ X = data(:, [1, 2]); y = data(:, 3);
 %  We start the exercise by first plotting the data to understand the 
 %  the problem we are working with.
 
-fprintf(['Plotting data with + indicating (y = 1) examples and o ' ...
-         'indicating (y = 0) examples.\n']);
+%O fprintf(['Plotting data with + indicating (y = 1) examples and o ' ...
+%O          'indicating (y = 0) examples.\n']);
 
-plotData(X, y);
+%O plotData(X, y);
 
 % Put some labels 
-hold on;
+%O hold on;
 % Labels and Legend
-xlabel('Exam 1 score')
-ylabel('Exam 2 score')
+%O xlabel('Exam 1 score')
+%O ylabel('Exam 2 score')
 
 % Specified in plot order
-legend('Admitted', 'Not admitted')
-hold off;
+%O legend('Admitted', 'Not admitted')
+%O hold off;
 
-fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
-
+%O fprintf('\nProgram paused. Press enter to continue.\n');
+%O pause;
 
 %% ============ Part 2: Compute Cost and Gradient ============
 %  In this part of the exercise, you will implement the cost and gradient
@@ -73,7 +72,6 @@ fprintf(' %f \n', grad);
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
-
 %% ============= Part 3: Optimizing using fminunc  =============
 %  In this exercise, you will use a built-in function (fminunc) to find the
 %  optimal parameters theta.
@@ -92,20 +90,21 @@ fprintf('theta: \n');
 fprintf(' %f \n', theta);
 
 % Plot Boundary
-plotDecisionBoundary(theta, X, y);
+%O plotDecisionBoundary(theta, X, y);
 
 % Put some labels 
-hold on;
+%O hold on;
 % Labels and Legend
-xlabel('Exam 1 score')
-ylabel('Exam 2 score')
+%O xlabel('Exam 1 score')
+%O ylabel('Exam 2 score')
 
 % Specified in plot order
-legend('Admitted', 'Not admitted')
-hold off;
+%O legend('Admitted', 'Not admitted')
+%O hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
+
 
 %% ============== Part 4: Predict and Accuracies ==============
 %  After learning the parameters, you'll like to use it to predict the outcomes
