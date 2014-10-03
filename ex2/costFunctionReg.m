@@ -18,6 +18,11 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+n = size(X, 2);
+[J, grad] = costFunction(theta, X, y);
+J = J + lambda/(2*m) * theta(2:n)' * theta(2:n);
+grad(2:n) = grad(2:n) + lambda/m * theta(2:n);
+
 
 
 
