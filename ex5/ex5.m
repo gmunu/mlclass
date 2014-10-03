@@ -25,7 +25,7 @@ clear ; close all; clc
 %
 
 % Load Training Data
-fprintf('Loading and Visualizing Data ...\n')
+%O fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex5data1: 
 % You will have X, y, Xval, yval, Xtest, ytest in your environment
@@ -35,12 +35,12 @@ load ('ex5data1.mat');
 m = size(X, 1);
 
 % Plot training data
-plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
-xlabel('Change in water level (x)');
-ylabel('Water flowing out of the dam (y)');
+%O plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
+%O xlabel('Change in water level (x)');
+%O ylabel('Water flowing out of the dam (y)');
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%O fprintf('Program paused. Press enter to continue.\n');
+%O pause;
 
 %% =========== Part 2: Regularized Linear Regression Cost =============
 %  You should now implement the cost function for regularized linear 
@@ -86,15 +86,15 @@ lambda = 0;
 [theta] = trainLinearReg([ones(m, 1) X], y, lambda);
 
 %  Plot fit over the data
-plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
-xlabel('Change in water level (x)');
-ylabel('Water flowing out of the dam (y)');
-hold on;
-plot(X, [ones(m, 1) X]*theta, '--', 'LineWidth', 2)
-hold off;
+%O plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
+%O xlabel('Change in water level (x)');
+%O ylabel('Water flowing out of the dam (y)');
+%O hold on;
+%O plot(X, [ones(m, 1) X]*theta, '--', 'LineWidth', 2)
+%O hold off;
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%O fprintf('Program paused. Press enter to continue.\n');
+%O pause;
 
 
 %% =========== Part 5: Learning Curve for Linear Regression =============
@@ -110,12 +110,12 @@ lambda = 0;
                   [ones(size(Xval, 1), 1) Xval], yval, ...
                   lambda);
 
-plot(1:m, error_train, 1:m, error_val);
-title('Learning curve for linear regression')
-legend('Train', 'Cross Validation')
-xlabel('Number of training examples')
-ylabel('Error')
-axis([0 13 0 150])
+%O plot(1:m, error_train, 1:m, error_val);
+%O title('Learning curve for linear regression')
+%O legend('Train', 'Cross Validation')
+%O xlabel('Number of training examples')
+%O ylabel('Error')
+%O axis([0 13 0 150])
 
 fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
 for i = 1:m
@@ -168,23 +168,23 @@ lambda = 0;
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit
-figure(1);
-plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
-plotFit(min(X), max(X), mu, sigma, theta, p);
-xlabel('Change in water level (x)');
-ylabel('Water flowing out of the dam (y)');
-title (sprintf('Polynomial Regression Fit (lambda = %f)', lambda));
+%O figure(1);
+%O plot(X, y, 'rx', 'MarkerSize', 10, 'LineWidth', 1.5);
+%O plotFit(min(X), max(X), mu, sigma, theta, p);
+%O xlabel('Change in water level (x)');
+%O ylabel('Water flowing out of the dam (y)');
+%O title (sprintf('Polynomial Regression Fit (lambda = %f)', lambda));
 
 figure(2);
 [error_train, error_val] = ...
     learningCurve(X_poly, y, X_poly_val, yval, lambda);
-plot(1:m, error_train, 1:m, error_val);
+%O plot(1:m, error_train, 1:m, error_val);
 
-title(sprintf('Polynomial Regression Learning Curve (lambda = %f)', lambda));
-xlabel('Number of training examples')
-ylabel('Error')
-axis([0 13 0 100])
-legend('Train', 'Cross Validation')
+%O title(sprintf('Polynomial Regression Learning Curve (lambda = %f)', lambda));
+%O xlabel('Number of training examples')
+%O ylabel('Error')
+%O axis([0 13 0 100])
+%O legend('Train', 'Cross Validation')
 
 fprintf('Polynomial Regression (lambda = %f)\n\n', lambda);
 fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
@@ -204,11 +204,11 @@ pause;
 [lambda_vec, error_train, error_val] = ...
     validationCurve(X_poly, y, X_poly_val, yval);
 
-close all;
-plot(lambda_vec, error_train, lambda_vec, error_val);
-legend('Train', 'Cross Validation');
-xlabel('lambda');
-ylabel('Error');
+%O close all;
+%O plot(lambda_vec, error_train, lambda_vec, error_val);
+%O legend('Train', 'Cross Validation');
+%O xlabel('lambda');
+%O ylabel('Error');
 
 fprintf('lambda\t\tTrain Error\tValidation Error\n');
 for i = 1:length(lambda_vec)
