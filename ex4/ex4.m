@@ -30,19 +30,19 @@ num_labels = 10;          % 10 labels, from 1 to 10
 %
 
 % Load Training Data
-fprintf('Loading and Visualizing Data ...\n')
+%O fprintf('Loading and Visualizing Data ...\n')
 
 load('ex4data1.mat');
 m = size(X, 1);
 
 % Randomly select 100 data points to display
-sel = randperm(size(X, 1));
-sel = sel(1:100);
+%O sel = randperm(size(X, 1));
+%O sel = sel(1:100);
 
-displayData(X(sel, :));
+%O displayData(X(sel, :));
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%O fprintf('Program paused. Press enter to continue.\n');
+%O pause;
 
 
 %% ================ Part 2: Loading Parameters ================
@@ -214,12 +214,12 @@ pause;
 %  displaying the hidden units to see what features they are capturing in 
 %  the data.
 
-fprintf('\nVisualizing Neural Network... \n')
+%O fprintf('\nVisualizing Neural Network... \n')
 
-displayData(Theta1(:, 2:end));
+%O displayData(Theta1(:, 2:end));
 
-fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+%O fprintf('\nProgram paused. Press enter to continue.\n');
+%O pause;
 
 %% ================= Part 10: Implement Predict =================
 %  After training the neural network, we would like to use it to predict
