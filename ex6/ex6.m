@@ -25,17 +25,17 @@ clear ; close all; clc
 %  the data.
 %
 
-fprintf('Loading and Visualizing Data ...\n')
+%O fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex6data1: 
 % You will have X, y in your environment
 load('ex6data1.mat');
 
 % Plot training data
-plotData(X, y);
+%O plotData(X, y);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%O fprintf('Program paused. Press enter to continue.\n');
+%O pause;
 
 %% ==================== Part 2: Training Linear SVM ====================
 %  The following code will train a linear SVM on the dataset and plot the
@@ -52,7 +52,7 @@ fprintf('\nTraining Linear SVM ...\n')
 % boundary varies (e.g., try C = 1000)
 C = 1;
 model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
-visualizeBoundaryLinear(X, y, model);
+%O visualizeBoundaryLinear(X, y, model);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -77,17 +77,17 @@ pause;
 %  plot the data. 
 %
 
-fprintf('Loading and Visualizing Data ...\n')
+%O fprintf('Loading and Visualizing Data ...\n')
 
 % Load from ex6data2: 
 % You will have X, y in your environment
 load('ex6data2.mat');
 
 % Plot training data
-plotData(X, y);
+%O plotData(X, y);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%O fprintf('Program paused. Press enter to continue.\n');
+%O pause;
 
 %% ========== Part 5: Training SVM with RBF Kernel (Dataset 2) ==========
 %  After you have implemented the kernel, we can now use it to train the 
@@ -105,8 +105,8 @@ C = 1; sigma = 0.1;
 % We set the tolerance and max_passes lower here so that the code will run
 % faster. However, in practice, you will want to run the training to
 % convergence.
-model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
-visualizeBoundary(X, y, model);
+%OT model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
+%O visualizeBoundary(X, y, model);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -123,7 +123,7 @@ fprintf('Loading and Visualizing Data ...\n')
 load('ex6data3.mat');
 
 % Plot training data
-plotData(X, y);
+%O plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -143,7 +143,7 @@ load('ex6data3.mat');
 
 % Train the SVM
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
+%O visualizeBoundary(X, y, model);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
