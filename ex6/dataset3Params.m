@@ -25,12 +25,11 @@ sigma = 0.3;
 
 C_vals = [0.01 0.03 0.1 0.3 1 3 10 30]';
 sigma_vals = [0.01 0.03 0.1 0.3 1 3 10 30]';
-C_mat = repmat(C_vals, size(sigma_vals'));
-sigma_mat = repmat(sigma_vals', size(C_vals));
-predictions = arrayfun(@(C_i, sigma_i) (mean(double(yval ~= (svmPredict(svmTrain(X, y, C_i, @(x1, x2) gaussianKernel(x1, x2, sigma_i)), Xval))))), C_mat, sigma_mat);
+[C_grid, sigma_grid] = ndgrid(C_vals, sigma_vals);
+predictions = arrayfun(@(C_i, sigma_i) (mean(double(yval ~= (svmPredict(svmTrain(X, y, C_i, @(x1, x2) gaussianKernel(x1, x2, sigma_i)), Xval))))), C_grid, sigma_grid);
 [dummy, ix] = min(predictions(:));
-C = C_mat(ix);
-sigma = sigma_mat(ix);
+C = C_grid(ix);
+sigma = sigma_grid(ix);
 
 % =========================================================================
 
