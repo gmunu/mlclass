@@ -97,14 +97,13 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
-
-
-
-
-
-
+    ix = find(cellfun(@(str2) (strcmp(str, str2)), vocabList));
+    word_indices = [word_indices; ix];
+    % if length(ix) == 0
+    %     continue;
+    % else
+    %     word_indices = [word_indices; ix];
+    % end
 
     % =============================================================
 
