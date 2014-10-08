@@ -21,11 +21,12 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
-
-
+m = size(X, 1);
+replicated_centroids = repmat(centroids, [1 1 m]);
+% transpose dims 3 <--> 1:
+replicated_centroids = permute(replicated_centroids, [3 2 1]);
+distances = sumsq(X - replicated_centroids, 2); % auto broadcasting
+[dummy, idx] = min(distances, [], 3);
 
 % =============================================================
 
