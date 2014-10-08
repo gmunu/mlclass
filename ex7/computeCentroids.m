@@ -26,10 +26,11 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-weights = bsxfun(@eq, idx, 1:K)';
-weights = weights ./ sum(weights, 2);
-centroids = weights * X;
+% weights = bsxfun(@eq, idx, 1:K)';
+% weights = weights ./ sum(weights, 2);
+% centroids = weights * X;
 % centroids = cell2mat(arrayfun(@(k) (mean(X(idx==k, :), 1)'), 1:K, 'UniformOutput', false))';
+centroids'(:, 1:K) = arrayfun(@(k) (mean(X(idx==k, :), 1)'), 1:K, 'UniformOutput', false));
 
 % =============================================================
 
